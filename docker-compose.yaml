@@ -1,0 +1,17 @@
+# Version of the API to use
+version: "3"
+
+services:
+    ui:
+        # Docker image to use
+        image: aminnairi/vue-cli
+        # Command run when starting the service
+        command: ui --host 0.0.0.0 --port 8000
+        volumes:
+            # Project folder to mount
+            - .:/home/user/project
+        ports:
+            # Port for the Vue UI interface
+            - 8000:8000
+            # Port for your Vue application
+            - 8080:8080
